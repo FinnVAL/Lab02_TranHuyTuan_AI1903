@@ -23,9 +23,13 @@ print("S1 = ",S1)
 
 #Ý 2 câu Q1:
 
-import math
-S2 = math.factorial(n)
-print("S2 = ", S2)
+def GiaiThua(n):
+    if n == 0:
+        return 1
+    else:
+        return n * GiaiThua(n-1)
+S2 = GiaiThua(n)
+print("S2 = ",S2)
 
 #Ý 3 câu Q1:
 
