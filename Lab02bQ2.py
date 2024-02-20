@@ -1,5 +1,5 @@
-m = int(input("Nhập vào số m: "))
-n = int(input("Nhập vào số n: "))
+m = int(input("Nhập vào số m:"))
+n = int(input("Nhập vào số n:"))
 
 #Ý 1 câu Q2:
 
@@ -33,11 +33,16 @@ if __name__ == "__main__":
 
 #Ý 2 câu Q2:
 
-import math
-x = math.gcd(m, n)
-print("Ước chung lớn nhất của 2 số m và n là: ",x)
+def gcd(a, b):
+    if (b == 0):
+        return a
+    return gcd(b, a % b)
+ 
+print("Ước chung lớn nhất của 2 số m và n là:",gcd(m,n))
 
 #Ý 3 câu Q2:
 
-y = math.lcm(m, n)
-print("Bội chung nhỏ nhất của 2 số m và n là : ",y)
+def lcm(a, b):
+    return int((a * b) / gcd(a, b))
+
+print("Bội chung nhỏ nhất của 2 số m và n là:",lcm(m,n))
